@@ -1,0 +1,546 @@
+print("Batman enters a warehouse where someone has tipped him the location of the Scarecrow.")
+print("He enters a room where he hears a voice...")
+print("Scarecrow: \"Answer my questions correctly to proceed to the next room, or be trapped forever!\"")
+print("Scarecrow: \"Let's begin, Batman.\"\n")
+while True:
+    try:
+        question1 = int(input("Question 1: What is 7 + 7? "))
+        if question1 == (14):
+            print("Correct!\n")
+            break
+        else:
+            print("Incorrect!\n")
+    except Exception:
+        print("Please enter an integer..\n")
+
+while True:
+    try:
+        question2 = int(input("Question 2: What is 2 * 26? "))
+        if question2 == (52):
+            print("Correct!\n")
+            break
+        else: 
+            print("Incorrect!\n")
+    except Exception:
+        print("Please enter an integer..\n")
+        
+while True:
+    try:
+        question3 = int(input("Question 3: If Lara earns $80 in 8 hours, how many hours will it take her to earn $500? "))
+        if question3 == (50):
+            print("Correct!\n")
+            break
+        else:
+            print("Incorrect!\n")
+    except Exception:
+        print("Please enter an integer..\n")
+    
+while True:
+    try:
+        question4 = int(input("Question 4: How many sides does an enneadecagon have? "))
+        if question4 == (19):
+            print("Correct!\n")
+            break
+        else:
+            print("Incorrect!\n")
+    except Exception:
+        print("Please enter an integer..\n")
+    
+while True:
+    try:
+        question5 = int(input("Question 5: If Ashley was born in 1938, how old would she be in 1962? "))
+        if question5 == (24):
+            print("Correct!\n")
+            break
+        else:
+            print("Incorrect!\n")
+    except Exception:
+        print("Please enter an integer..\n")
+
+print("Scarecrow: \"You were smarter than I thought you are. You have caught me, but you will never catch Joker!\"")
+print("Congrats! You beat level 1 and must go on to defeat the next villain, Bane.\n")
+
+
+print("We will begin with a knowledge test Batman")
+print("Answer these 5 questions correctly to move on to the next level")
+print("Let's begin")
+print("Question 1: What is 7 + 7? ")
+if int(input) == (14):
+    print("Correct!")
+else:
+    print("Incorrect!")
+    
+print("Question 2: What is 2 * 26? ")
+if int(input) == (52):
+    print("Correct!")
+else: 
+    print("Incorrect!")
+    
+print("Question 3: If Lara earns $80 in 8 hours, how many hours will it take her to earn $500?")
+if int(input) == (50):
+    print("Correct!")
+else:
+    print("Incorrect!")
+    
+print("Question 4: How many sides does an enneadecagon have?")
+if int(input) == (19):
+    print("Correct!")
+else:
+    print("Incorrect!")
+    
+print("Question 5: If Ashley was born in 1938, how old would they have been in 1962?")
+if int(input) == (24):
+    print("Correct!")
+else:
+    print("Incorrect!")
+
+print("------------------------")
+print("LEVEL 2: BANE´S BATTLE")
+print("------------------------")
+
+from  random  import randint
+print("MISSION: Batman you are in the underground base on the edge of Park Row where Bane is hidden. He has conducted research into determining Batman’s identity and has the codes to find the location of his ally, the Joker. Batman, you have to find the Joker and interrogate Bane.")
+print()
+print("As you walk by trying to find clues, you find Bane's database where he has hidden the code to access the location of the Joker, but Bane stands in your way...")
+print()
+print("Bane: Well, well,well… look who we have here, the famous hero of Gotham City, Batman!")
+print()
+print ("Batman: You’ve made a serious mistake. Tell me, where is your sadist friend!")
+print()
+print("To get past him, Bane has presented you a challenge..")
+print()
+print ("Bane: I am Bane and I could kill you Mr. Wayne... but death would only end your agony and silence your shame. Instead, I will simply...BREAK YOU!")
+print()
+print("Bane: Beat me in a fist, slap, kick battle.\n You have to beat me twice in 3 battle rounds but haha, I doubt it Mr. Wayne!")
+print()
+moves= ["fist", "slap", "kick"]
+
+Fist > kick
+Slap > fist
+Kick > slap
+
+while True:
+    computer = moves [randint(0,2)]
+    player = input("Please type Fist, Slap, Kick or End Game: ").lower()
+    print()
+    try:
+        if player == "end game":
+            print("END OF THE GAME, ADIÓS!")
+            break
+        elif player == computer:
+            print("Tie!")
+        elif player == "fist":
+            if computer == "slap":
+                print("You have lost against Bane!", computer, "beats", player)
+            else:
+                print ("You win!", player, "beats", computer)
+                break
+        elif player == "slap":
+           if computer == "kick":
+              print("You have lost against Bane", computer, "beats", player)
+           else: 
+              print("You win, NICE GAME!!!", player, "beats", computer)
+              break
+        elif player == "kick":
+          if computer == "fist":
+            print("Oh, no! Bane wins", computer, "beats", player)
+          else: 
+            print("Victory is yours, Batman!!!", player, "beats", computer)
+            break
+        else:
+            print("Oh, oh... Check your Spelling!")
+    except Exception:
+        print("Wrong input. Try again.")
+
+print("Bane:\"You beat me fair and square. You are brave Batman...but you will never catch Joker!\"\n")
+print("Congrats! You have won level 2 and now you must go on to defeat the next villain, The Riddler.\n")
+
+
+print("------------------------")
+print("LEVEL 3: RIDDLER’S RIDDLE")
+print("------------------------\n")
+class  Question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+    def checkAnswer(self, response):
+        print(self.answer == response)
+    def display(self):
+        print(self.prompt)        
+def present(q):
+      print()
+      q.display()
+     
+class MC(Question):
+    def __init__(self, prompt, answer):
+        super().__init__(prompt, answer)
+        self.choices = []
+    def addChoice(self, choice):
+        self.choices.append(choice)
+    def setAnswer(self, answer):
+        self.answer = answer 
+    def display(self):
+         super().display()
+         for i in range(len(self.choices)):
+             print(self.choices[i])
+    answer = input       
+score = 0
+score = int(score)  
+
+         
+q1 = MC("Q1.\nI am first a fraud or a trick. Or perhaps a blend of the two. That’s up to your misinterpretation.","D")
+q1.addChoice("")
+q1.addChoice("(A) Confused")
+q1.addChoice("(B) Confused?")
+q1.addChoice("(C) Confusion?")
+q1.addChoice("(D) Confusion")  
+q1.setAnswer("D") 
+
+print("")
+print("______________________________________________________")
+print("Hello Batsy! Long time no see")  
+print("I have some riddles for you")     
+print("Pick the right answer wisely if you want to live...")
+print("______________________________________________________")
+
+for tries in range(2):
+    present(q1)
+    response = input("Your answer: ")
+    if response == "d" or response == "D" or response == "confusion" or response == "Confusion":
+        print("You got it right!") 
+        score += 1
+        break
+    else:
+        print("Oops, that's not right, Try again!")
+else:
+    print("Out of chances!")
+    
+    
+    
+    
+print("")
+ 
+
+q2 = MC("Q2.\nIt can be cruel, poetic, or blind. But when it’s denied, it’s violence you may find.","B")
+q2.addChoice("")
+q2.addChoice("(A) Unity")
+q2.addChoice("(B) Justice")
+q2.addChoice("(C) Confusion")
+q2.addChoice("(D) Love") 
+q2.setAnswer("B")  
+
+for tries in range(2):
+    present(q2)
+    response = input("Your answer: ")
+    if response == "b" or response == "B" or response == "Justice" or response == "justice" or response == "JUSTICE":
+        print("You got it right!")
+        score += 1
+        break
+    else:
+        print("Oops, that's not right, Try again!")
+else:
+    print("Out of chances!") 
+
+
+print("") 
+
+q3 = Question("Q3.\nWhat does a liar do when he's dead?\nHe_________still.\n", "Lies")
+
+for tries in range(2):
+    present(q3)
+    response = input("Your answer: ")
+    if response == "lies" or response == "Lies" or response == "LIES" :
+        print("You got it right!")
+        score += 1
+        break
+    else:
+        print("Oops, that's not right, Try again!")
+else:
+    print("Out of chances!")
+
+    
+  
+   
+
+q4 = Question("Q4.\nAs a child you have many, but over time only a few hold steady.\n", "Friends")
+
+for tries in range(2):
+    present(q4)
+    response = input("Your answer: ")
+    if response == "friends" or response == "Friends" or response == "FRIENDS" :
+        print("You got it right!")
+        score += 1
+        break
+    else:
+        print("Oops, that's not right, Try again!")
+else:
+    print("Out of chances!")
+    
+print("")
+
+q5 = Question("Q5.\nNot a joke, but sometimes you need to shout twice to really mean it.___! \nSincerely Joker\n\n", "HA")   
+for tries in range(2):
+    present(q5)
+    response = input("Your answer: ")
+    if response == "ha" or response == "HA" or response == "HAHA" or response== "haha" or response == "HA HA" or response == "ha ha" :
+        print("You got it right!")
+        score += 1
+        break
+    else:
+        print("Oops, that's not right, try again.")
+else:
+    print("Out of chances!")
+
+answer = input  
+
+
+print("You got " + str(score)+ "/5 questions correct!")
+
+if (score >= 3 ):
+    print("_____________________________________________________________")
+    print("I'll murder you. But first I need a cold drink of ice water")
+    print("_____________________________________________________________")
+    print("")
+    print("🎉 Congratulations! Level up!🎉")
+else:
+    print("______________________________________________________________________")
+    print("Emotion's always the enemy of true justice. Fool! HAHAHAHA")
+    print("______________________________________________________________________")
+    print("🚫 Game over 🚫")
+
+#Level 4
+print("------------------------")
+print("LEVEL 4: THE FINAL BATTLE")
+print("------------------------\n")
+import random
+class Level4:
+    def __init__(self, dice, position1, position2, rolls):
+        self.dice = dice
+        self.position1 = position1
+        self.position2 = position2
+        self.rolls = rolls
+    def run(self):
+        self.rolls += 1
+        self.dice = random.randint(1,7)
+        self.position2 += self.dice
+        if self.dice == 7:
+            print("Joker rolled a 7! He forces you back 1 spaces.")
+            self.position1 -= 1
+        self.dice = random.randint(1,6)
+        self.position1 += self.dice
+        return self.position1, self.position2
+    def checkPosition(self):
+        if self.position1 >= self.position2:
+            print("You have caught the Joker!")
+            flag = False
+            return flag
+        if self.rolls == 6:
+            print("6 rolls has been reached and the chase will reset..")
+            self.position1 = 0
+            self.position2 = 1
+            self.rolls = 0
+        else:
+            pass
+    
+test = Level4(0, 0, 1, 0)
+print("You are now chasing the Joker! He has forced you to play his dice game.")
+
+print("Roll your dice and move the corresponding spaces. Joker will do the same but starts 1 space ahead.")
+
+print("However, Joker has added a catch...Joker is able to roll a 7, and if he does you are forced back 1 space\n")
+
+print("**If you have not caught the Joker within 6 rolls, your stamina will expire and the game will restart**\n")
+
+print("Joker: \"Let's get started...\"\n")
+while True:
+    run = input("Input '1' to move spaces: ")
+    try:
+        if run == '1':
+            spaces = test.run()
+            print("Your position is on space", spaces[0], "and Joker is on space", spaces[1])
+            print()
+            check = test.checkPosition()
+            if check == False:
+                break
+        else:
+            print("Wrong input! Please try again..")
+            print()
+    except ValueError:
+        print("Wrong input! Please try again..")
+        print()
+    except Exception:
+        print("Wrong input! Please try again..")
+
+print("Joker: \"Batman... You have won for today\"")
+print("Joker: \"Take the gem! But you will never catch me as long as you live...\"")
+print("*Joker disappears in smoke, leaving behind the gem*\n")
+print("The cave starts to shake. You must now leave the maze with the gem unscathed.")
+
+print("You must choose the correct path(Right, Straight, Left) in order to advance further into the game")
+print("You are allowed to make 5 mistakes max, or you will be caught by Joker's goons\n")
+
+# put an error limit
+# space everything out to make it look more neat
+# Make sure you can fail the level
+import sys
+errorCount = 0
+
+position = 0
+while True:
+    answer1 = input("You are on the first stage. Choose either Right, Left, Straight: ")
+    
+    
+    try:
+        if answer1.lower() == "right":
+            print("You have chosen the correct path, now you proceed to the next step!")
+            print()
+            break
+        
+        if errorCount == 5:
+           print("you made too many mistakes and got captured, you have to restart")
+           print("Restart the game to continue playing")
+           sys.exit()
+           
+        elif answer1.lower() == "left":
+            print("You see a boulder blocking your path which forces you to go back.")
+            print()
+            errorCount = 1 + errorCount
+            
+        elif answer1.lower()  == "straight":
+            print("On your way to the next stage you are exposed to a toxic gas that forces you to go back .")
+            print()
+            errorCount = 1 + errorCount
+            
+        else:
+            print("Wrong input. Please try again..")
+            print()
+            
+    except Exception:
+        print("Wrong input. Please try again..")
+
+# if errors >= 5:
+
+while True:
+    answer1 = input("Now you are on the second stage. Choose either Right, Left, Straight: ")
+    
+    if errorCount == 5:
+       print("you made too many mistakes and got captured, you have to restart")
+       print("Restart the game to continue playing")
+       sys.exit()
+       
+    try:
+        if answer1.lower() == "straight":
+            print("You have chosen the correct path, now you proceed to the next step!")
+            print()
+            break
+    
+        
+        elif answer1.lower() == "left":
+            print("You chose the wrong path, go back")
+            print()
+            errorCount = 1 + errorCount
+            
+        elif answer1.lower() == "right":
+            print("You chose the wrong path, go back")
+            print()
+            errorCount = 1 + errorCount
+            
+        else:
+            print("Wrong input. Please try again..")
+            print()
+            
+    except Exception:
+        print("Wrong input. Please try again..")
+
+print("You are now on the third stage, you notice a screen that is asking you a riddle")
+while True:
+    riddle1 = input("What gets wet when drying? ")
+    print()
+    
+    if errorCount == 5:
+       print("you made too many mistakes and got captured, you have to restart")
+       print("Restart the game to continue playing")
+       sys.exit()
+       
+    try:
+        if riddle1.lower() == "towel":
+            print("You have chosen the correct answer!")
+            print("The giant stone blocking the entrance of the maze opens, and the outside lights shine through..")
+            print()
+            break
+        
+        else:
+            print("Incorrect! Try again..")
+            print("Heres a hint: You use it after taking a shower...")
+            errorCount += 1
+            print()
+            
+    except Exception:
+        print("Incorrect! Try again..")
+        print()
+        errorCount = 1 + errorCount
+        
+print("The chase has come to an end, and you have successfully escaped the cave with the jewel.")
+print("As you make your way to return the jewel, you hear a sinister laugh echo into the night...")
+
+
+
+
+    
+    completed
+print("You have arrived to the second stage of the maze and you hear a familiar voice...")
+print("I see you have obtained the gem, hand it over")
+print()
+print("You turn around and see Catwoman lustfully eyeing the gem and lands softly on the ground")
+print("You prepare yourself for a fight")
+    
+import random
+
+print("~~~~~~~~~~~~~")
+print("|  stage 2  |")
+print("~~~~~~~~~~~~~\n")
+
+# Define the possible moves and their corresponding hit point values
+moves = ["punch", "kick", "block", "dodge"]
+move_values = [-10, -15, -5, 0]
+
+# Set the initial hit points for the player and the computer
+batman = 100
+catwoman = 100
+
+# Prompt the user to start the game
+input("Press enter to start the game: ")
+
+while batman > 0 and catwoman > 0:
+  # Prompt the user to make a move
+  move = input("Enter your move (punch, kick, block, or dodge): ")
+
+  # Validate the user's move
+  while move not in moves:
+    move = input("Invalid move. Enter your move (punch, kick, block, or dodge): ")
+
+  # Choose a random move for the computer
+  computer_move = random.choice(moves)
+
+  # Print the moves made by the player and the computer
+  print(f"You made the move: {move}")
+  print(f"catwoman made the move: {computer_move}")
+  print()
+
+  # Update the hit points based on the moves made
+  batman += move_values[moves.index(move)]
+  catwoman += move_values[moves.index(computer_move)]
+
+  # Print the current hit points for the player and the computer
+  print(f"You have {batman} hit points")
+  print(f"catwoman has {catwoman} hit points")
+  print()
+
+# Print the game over message
+if batman <= 0:
+  print("You have been defeated!")
+  print()
+else:
+  print("You have defeated catwoman!")
+  print()
+
